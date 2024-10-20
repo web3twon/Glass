@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import * as ethers from 'ethers';
 import { GHST_CONTRACT_ADDRESS, DIAMOND_ABI, CONTRACT_ADDRESS } from '../utils/constants';
 
-interface WithdrawalFormProps {
+export interface WithdrawalFormProps {
   aavegotchis: Aavegotchi[];
   onWithdraw: (selectedGotchis: string[], amount: string, tokenAddress: string) => void;
   onCustomTokenChange: (address: string) => void;
@@ -20,7 +20,7 @@ interface WithdrawalFormProps {
   customTokenAddress: string;
 }
 
-export interface Aavegotchi {
+interface Aavegotchi {
   tokenId: string;
   name: string;
   escrowWallet: string;
