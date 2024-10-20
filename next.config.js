@@ -5,4 +5,7 @@ module.exports = {
   output: 'export',
   basePath: '/Glass',
   assetPrefix: '/Glass/',
+  images: {
+    unoptimized: true,
+  },
 };
