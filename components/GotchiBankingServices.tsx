@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { ethers } from 'ethers';
 import TopSection from './TopSection';
-import WithdrawalForm, { Aavegotchi, WithdrawalFormProps } from './WithdrawalForm';
+import { WithdrawalForm, Aavegotchi, WithdrawalFormProps } from './WithdrawalForm';
 import { CONTRACT_ADDRESS, GHST_CONTRACT_ADDRESS, DIAMOND_ABI, ERC20_ABI } from '../utils/constants';
 import { cn } from '../lib/utils';
 
