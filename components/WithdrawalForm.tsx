@@ -195,7 +195,8 @@ const WithdrawalForm: React.FC<WithdrawalFormProps> = ({
       );
 
       setAmount('');
-      await onWithdraw(tokenAddress, selectedGotchis, amount);
+      // Fix: Pass the arguments in the correct order
+      await onWithdraw(selectedGotchis, amount, tokenAddress);
     } catch (error) {
       console.error('Error during withdrawal:', error);
       if (error instanceof Error) {
@@ -293,4 +294,3 @@ const WithdrawalForm: React.FC<WithdrawalFormProps> = ({
   );
 };
 
-export default WithdrawalForm;
