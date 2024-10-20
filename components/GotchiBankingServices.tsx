@@ -342,7 +342,7 @@ const GotchiBankingServices: React.FC<GotchiBankingServicesProps> = ({ isDarkMod
   }, []);
 
   const handleWithdraw = useCallback(
-    async (tokenAddress: string, selectedGotchis: string[], amount: string) => {
+    async (selectedGotchis: string[], amount: string, tokenAddress: string) => {
       if (!contract || !signer) {
         console.error('Contract or signer not initialized');
         return;
