@@ -294,3 +294,4 @@ const WithdrawalForm: React.FC<WithdrawalFormProps> = ({
   );
 };
 
+export { WithdrawalForm };
