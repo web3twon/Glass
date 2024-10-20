@@ -20,7 +20,7 @@ interface WithdrawalFormProps {
   customTokenAddress: string;
 }
 
-interface Aavegotchi {
+export interface Aavegotchi {
   tokenId: string;
   name: string;
   escrowWallet: string;
