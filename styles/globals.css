@@ -1,0 +1,233 @@
+/* styles/globals.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Apply global styles to <html> and <body> */
+html,
+body {
+  @apply min-h-screen overflow-x-hidden;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  @apply bg-gradient-to-br from-purple-400 via-pink-500 to-red-500 text-text;
+  transition: background-color 1.5s ease, color 1.5s ease;
+}
+
+body.dark {
+  @apply from-gray-900 via-gray-800 to-gray-700 text-darkText;
+}
+
+/* Ensure the main App container spans the full viewport height and centers text */
+.App {
+  @apply text-center min-h-screen flex flex-col;
+}
+
+/* Utility class for glassmorphism effect */
+.glassmorphism {
+  @apply bg-white bg-opacity-10 backdrop-blur-lg border border-white border-opacity-20 rounded-xl shadow-lg;
+
+  /* Add transition to background and border colors */
+  transition: background-color 1.5s ease, border-color 1.5s ease, color 1.5s ease;
+}
+
+/* Adjust text to ensure readability over translucent backgrounds */
+.text-glass {
+  text-shadow: 1px 1px 3px #4b4b4b;
+  @apply text-white;
+
+  /* Add transition to text color */
+  transition: color 1.5s ease;
+}
+
+/* Adjust select and input elements for better visibility */
+select,
+input,
+textarea {
+  @apply bg-white/20 dark:bg-black/20 text-white placeholder-white/70;
+
+  /* Add transition to background and text colors */
+  transition: background-color 1.5s ease, color 1.5s ease;
+}
+
+/* Focus styles */
+select:focus,
+input:focus,
+textarea:focus {
+  @apply outline-none ring-2 ring-white/50;
+}
+
+/* Adjust option elements in select dropdown */
+select option {
+  @apply bg-white text-black dark:bg-black dark:text-white;
+
+  /* Add transition to background and text colors */
+  transition: background-color 1.5s ease, color 1.5s ease;
+}
+
+/* Add transition to other elements that change with dark mode */
+button,
+label,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+table,
+td,
+th {
+  transition: background-color 1.5s ease, color 1.5s ease, border-color 1.5s ease;
+}
+
+/* Max width container for main content */
+.max-width-container {
+  @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Max width container for tables */
+.table-container {
+  @apply w-full max-w-6xl mx-auto overflow-x-auto;
+}
+
+/* Responsive table styles */
+.responsive-table {
+  @apply w-full table-auto;
+}
+
+/* Table header styles */
+.responsive-table th {
+  @apply px-4 py-2 text-left;
+}
+
+/* Table cell styles */
+.responsive-table td {
+  @apply px-4 py-2;
+}
+
+/* Responsive styles for small screens */
+@media (max-width: 640px) {
+  .responsive-table {
+    @apply block;
+  }
+
+  .responsive-table thead {
+    @apply hidden;
+  }
+
+  .responsive-table tbody {
+    @apply block;
+  }
+
+  .responsive-table tr {
+    @apply block mb-4;
+  }
+
+  .responsive-table td {
+    @apply block text-right;
+  }
+
+  .responsive-table td::before {
+    content: attr(data-label);
+    @apply float-left font-bold;
+  }
+}
+
+.responsive-table th,
+.responsive-table td {
+  text-align: center;
+}
+
+/* Update token image styles */
+.token-image-container {
+  @apply w-6 h-6 relative;
+}
+
+.token-image {
+  @apply w-full h-full object-cover absolute top-0 left-0;
+}
+
+.rounded-full {
+    border-radius: 9999px;
+}
+
+/* Floating orbs */
+.floating-orbs {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: float 20s infinite ease-in-out;
+}
+
+.orb:nth-child(1) {
+  width: 300px;
+  height: 300px;
+  left: -50px;
+  top: -50px;
+  background: radial-gradient(circle at 30% 30%, #ff9a9e, #fad0c4);
+  animation: float1 25s infinite ease-in-out;
+}
+
+.orb:nth-child(2) {
+  width: 200px;
+  height: 200px;
+  right: -25px;
+  top: 30%;
+  background: radial-gradient(circle at 30% 30%, #a18cd1, #fbc2eb);
+  animation: float2 30s infinite ease-in-out;
+}
+
+.orb:nth-child(3) {
+  width: 150px;
+  height: 150px;
+  left: 20%;
+  bottom: -25px;
+  background: radial-gradient(circle at 30% 30%, #84fab0, #8fd3f4);
+  animation: float3 35s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+  }
+}
+
+@keyframes float1 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(50px, 100px) rotate(90deg); }
+  50% { transform: translate(100px, 50px) rotate(180deg); }
+  75% { transform: translate(50px, -50px) rotate(270deg); }
+}
+
+@keyframes float2 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(-50px, 100px) rotate(120deg); }
+  66% { transform: translate(-100px, -50px) rotate(240deg); }
+}
+
+@keyframes float3 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  20% { transform: translate(100px, 50px) rotate(72deg); }
+  40% { transform: translate(50px, 100px) rotate(144deg); }
+  60% { transform: translate(-50px, 50px) rotate(216deg); }
+  80% { transform: translate(0px, -100px) rotate(288deg); }
+}

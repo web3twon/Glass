@@ -1,0 +1,1 @@
+self.__REACT_LOADABLE_MANIFEST="{\"index.tsx -> ../components/GotchiBankingServices\":{\"id\":\"index.tsx -> ../components/GotchiBankingServices\",\"files\":[\"static/chunks/components_GotchiBankingServices_tsx.js\"]}}"
